@@ -15,7 +15,7 @@ export default function Signup() {
             if (!user.name || !user.password) throw new Error('пустое значение')
             if (user.password.length < 8) throw new Error('пароль не менее 8 символов')
             setUser({ name: '', password: '' })
-            router.push("/products");
+            router.replace('/(tabs)/home');
 
         } catch (error: any) {
             console.error(error.message);

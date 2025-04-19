@@ -6,6 +6,8 @@ import productsCard from '../../storage/index';
 import { iProducts } from "@/interfaces";
 import { useLocalSearchParams, useRouter } from "expo-router/build/hooks";
 import { useEffect, useState } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import arrBasket from "@/storage/basket";
 
 export default function Detail() {
     const router = useRouter();
@@ -17,6 +19,18 @@ export default function Detail() {
         setProduct(filerProductCard);
     }, [params.id]);
 
+    const addToBasket = async() =>{
+        try {
+            await AsyncStorage.setItem('products', JSON.stringify(product))
+            
+            console.log('success set item');
+
+            router.replace('/(tabs)/basket')
+            
+        } catch (error: any) {
+            console.error(error.message)
+        }
+    }
     return (
         <ScrollView style={styles.wrapper}>
             <View style={{ position: 'absolute', top: 57, width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -28,7 +42,7 @@ export default function Detail() {
                 <Text style={styles.nameText}>{product[0]?.title}</Text>
                 <Text style={styles.nameText}>Rs. {product[0]?.price}</Text>
             </View>
-            <TouchableOpacity style={styles.btnAdd}>
+            <TouchableOpacity onPress={addToBasket} style={styles.btnAdd}>
                 <Text style={styles.btnText}>Add to Cart</Text>
             </TouchableOpacity>
             <View style={{ marginTop: 12 }}>

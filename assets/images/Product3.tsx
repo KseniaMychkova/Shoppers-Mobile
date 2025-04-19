@@ -13,7 +13,7 @@ function Product3(props:any) {
       {...props}
     >
       <Path
-        d="M0 20C0 8.954 8.954 0 20 0h94c11.046 0 20 8.954 20 20v92H0V20z"
+        d="M0 0H134V112H0V0Z"
         fill="url(#pattern0_2_34)"
       />
       <Defs>

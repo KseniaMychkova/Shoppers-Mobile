@@ -1,5 +1,7 @@
 import { Tabs } from "expo-router";
 import FontAwesome from '@expo/vector-icons/FontAwesome'
+import React from 'react';
+
 
 export default function TabLayout() {
     return (
@@ -9,7 +11,7 @@ export default function TabLayout() {
                     name="Home"
                     options={{
                         title: '',
-                        tabBarIcon: ((focused) => <FontAwesome name='home' color={focused ? '#F9EF05' : 'black'} />),
+                        tabBarIcon: ((focused) => <FontAwesome size={30} name='home' color={focused ? '#F9EF05' : 'black'} />),
                         tabBarActiveTintColor: '#F9EF05'
                     }} />
 
@@ -17,14 +19,14 @@ export default function TabLayout() {
                     name="Profile"
                     options={{
                         title: '',
-                        tabBarIcon: ((focused) => <FontAwesome name='user' color={focused ? '#F9EF05' : 'black'} />),
+                        tabBarIcon: ((focused) => <FontAwesome size={30} name='user' color={focused ? '#F9EF05' : 'black'} />),
                         tabBarActiveTintColor: '#F9EF05'
                     }} />
                 <Tabs.Screen
                     name="Basket"
                     options={{
                         title: '',
-                        tabBarIcon: ((focused) => <FontAwesome name='shopping-cart' color={focused ? '#F9EF05' : 'black'} />),
+                        tabBarIcon: ((focused) => <FontAwesome size={30} name='shopping-cart' color={focused ? '#F9EF05' : 'black'} />),
                         tabBarActiveTintColor: '#F9EF05'
                     }} />
 

@@ -32,7 +32,7 @@ export default function Login() {
                 <TouchableOpacity
                     onPress={() => {
                         setUser({ name: '', email: '', password: '' })
-                        router.push("/profile");
+                        router.push("/(tabs)/profile");
                     }} 
                     style={{ backgroundColor: '#F9EF05', borderRadius: 40, height: 50 }}>
                     <Text style={styles.btnText}>SIGN UP</Text>
